@@ -20,6 +20,7 @@ function getZip(event) {
 
 function processZip(zipcode) {
   let link = addZiptoLink(zipcode);
+  webScraper(link);
 }
 
 function addZiptoLink(zipcode) {
@@ -29,16 +30,3 @@ function addZiptoLink(zipcode) {
   }
 }
 
-function webScraper(link) {
-  const { JSDOM } = require("jsdom");
-  const { window } = new JSDOM("", {
-    url: link,
-  });
-  const $ = require("jquery")(window);
-
-  $.get(link, function (html) {
-    console.log(html);
-  });
-  return html;
-  // scraping the variable called 'link' web page
-}
