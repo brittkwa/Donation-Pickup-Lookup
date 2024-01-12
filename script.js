@@ -30,3 +30,6 @@ function addZiptoLink(zipcode) {
   }
 }
 
+function webScraper(link) {
+  axios.get(link).then();
+}
